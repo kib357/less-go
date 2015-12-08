@@ -10,8 +10,8 @@ import (
 
 var (
 	ctx *duktape.Context
-	r  Reader
-	w  Writer
+	r   Reader
+	w   Writer
 )
 
 type Reader interface {
@@ -45,6 +45,19 @@ func readFile(c *duktape.Context) int {
 		if err != nil {
 			return 0
 		}
+	}
+	c.PushString(string(bytes))
+	return 1
+}
+
+func readFileFromAssets(c *duktape.Context) int {
+	var path = c.SafeToString(-1)
+	if path == "" {
+		return 0
+	}
+	bytes, err := Asset(path)
+	if err != nil {
+		return 0
 	}
 	c.PushString(string(bytes))
 	return 1
@@ -115,17 +128,18 @@ func init() {
 	w = writer{}
 	ctx = duktape.New()
 	ctx.PushGlobalGoFunction("readFile", readFile)
+	ctx.PushGlobalGoFunction("readFileFromAssets", readFileFromAssets)
 	ctx.PushGlobalGoFunction("writeFile", writeFile)
 
 	ctx.EvalString(`
 		Duktape.modSearch = function (id, require, exports, module) {
 			id = id.replace(/\.js$/, "");
-			var res = readFile(id + ".js");
+			var res = readFileFromAssets(id + ".js");
 			if (typeof res === 'string') {
 				return res;
 			}
 
-			var res = readFile(id + "/index.js");
+			var res = readFileFromAssets(id + "/index.js");
 			if (typeof res === 'string') {
 				return 'module.exports = require("' + id + '/index.js")';
 			}
