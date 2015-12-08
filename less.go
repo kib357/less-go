@@ -10,8 +10,8 @@ import (
 
 var (
 	ctx *duktape.Context
-	r   = reader{}
-	w   = writer{}
+	r  Reader
+	w  Writer
 )
 
 type Reader interface {
@@ -111,6 +111,8 @@ func RenderFile(input, output string, mods ...map[string]interface{}) error {
 }
 
 func init() {
+	r = reader{}
+	w = writer{}
 	ctx = duktape.New()
 	ctx.PushGlobalGoFunction("readFile", readFile)
 	ctx.PushGlobalGoFunction("writeFile", writeFile)
