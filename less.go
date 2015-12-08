@@ -64,11 +64,11 @@ func writeFile(c *duktape.Context) int {
 }
 
 func SetReader(customReader Reader) {
-	r = customReader.(reader)
+	r = customReader
 }
 
 func SetWriter(customWriter Writer) {
-	w = customWriter.(writer)
+	w = customWriter
 }
 
 func RenderFile(input, output string, mods ...map[string]interface{}) error {
