@@ -113,13 +113,19 @@ func RenderFile(input, output string, mods ...map[string]interface{}) error {
 					writeFile("` + output + `", output.css);
 				} else {
 					print('Render error', e.stack);
+					e.stack
 				}
 			});
 		} catch (e) {
 			print("ERROR!", e.stack);
+			e.stack
 		}
 	`)
-
+	result := ctx.GetString(-1)
+	ctx.Pop()
+	if result != "" {
+		return errors.New(result)
+	}
 	return nil
 }
 
