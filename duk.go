@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	"gopkg.in/olebedev/go-duktape.v2"
 	"io/ioutil"
 )
@@ -58,46 +58,24 @@ func main() {
 
 	ctx.PevalString(`
 		try {
-			var env = require("environment");
-			var fs = require("fs");			
-			var less = require("less");
-			var fm = require('LessFileManager.js');
-			var ffm = new fm();
-			var compiler = less(env, [ffm]); 					 						
-			print('ffm');			
-			
-			compiler.logger.addListener({
-				debug: function(msg) {
-					print(msg);
-    			},	
-				info: function(msg) {
-					print(msg);
-				},
-				warn: function(msg) {
-					print(msg);
-				},
-				error: function(msg) {
-					print(msg);
-				}
-			});						
+			var fs = require('./assets/less-go/fs');
+			var less = require('./assets/less-go');
 			
 			var data = fs.readFileSync('./css/app.less');		
-			print(data.slice(0,50) + '...');
-			compiler.render(data, {filename: "./css/app.less"}, function (e, output) {
-				print("--------------------");
-				//print(output.css);
-				writeFile("./css/app.css", output.css);		 
-				print(e);		 
-				print("--------------------");
-			});
-			
-			print('________end__________');
-									
+			print('Rendering less: ', data.slice(0,50) + '...');
+			less.render(data, {filename: "./css/app.less"}, function (e, output) {
+				if (e == null) {
+					print("Compiled");
+					writeFile("./css/app.css", output.css);
+				} else {		 
+					print('Compile error', e.stack);
+				}		 
+			});										
 		} catch (e) {
-			print("ERROR!", e)
+			print("ERROR!", e.stack);
 		}
 	`)
-	result := ctx.GetString(-1)
-	ctx.Pop()
-	fmt.Println("result is:", result)
+	// result := ctx.GetString(-1)
+	// ctx.Pop()
+	// fmt.Println("result is:", result)
 }
