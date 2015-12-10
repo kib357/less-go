@@ -20,15 +20,25 @@ This project is a work-in-progress, we accept pull requests.
 
 ```
     cd $GOPATH/src/github.com/kib357/less-go/lessc
+    go get
     go build
     ./lessc --input="inputFile" --output="outputFile"
+    ./lessc -i inputFile -o outputFile
 ```
 
-Example:
+Examples:
 
 ```
     ./lessc --input="./styles.less" --output="./styles.css"
+    ./lessc -i styles.less -o styles.css
 ```
+
+More about usage you can see in cli help:
+
+```
+    ./lessc -h
+```
+
 ## Programmatic usage
 
 ```go
