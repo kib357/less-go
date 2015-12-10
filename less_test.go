@@ -28,12 +28,12 @@ func TestRender(t *testing.T) {
 	SetReader(cssAssetReader)
 	SetWriter(cssAssetWriter)
 
-	err := RenderFile("input", "output")
+	err := RenderFile("input", "output", map[string]interface{}{"compress": true})
 
 	if err != nil {
 		t.Error("Render error")
 	}
-	var expected = `.class {width: 2;}`
+	var expected = `.class{width:2}`
 	if string(res) != expected {
 		t.Error(`Render result invalid: "`, string(res), `" != "`, expected, `"`)
 	}
