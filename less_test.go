@@ -1,19 +1,20 @@
-package main
+package less
 
 import (
+	"os"
 	"testing"
 )
 
 var (
 	cssAssetReader = CssAssetReader{}
 	cssAssetWriter = CssAssetWriter{}
-	res         = []byte{}
+	res            = []byte{}
 )
 
 type CssAssetReader struct{}
 
 func (CssAssetReader) ReadFile(path string) ([]byte, error) {
-	return ".class { width: (1 + 1) }", nil
+	return []byte(".class { width: (1 + 1) }"), nil
 }
 
 type CssAssetWriter struct{}
@@ -24,16 +25,16 @@ func (CssAssetWriter) WriteFile(path string, data []byte, mode os.FileMode) erro
 }
 
 func TestRender(t *testing.T) {
-  less.SetReader(cssAssetReader)
-	less.SetWriter(cssAssetWriter)
-	
-	err := less.RenderFile("input", "output")
-	
+	SetReader(cssAssetReader)
+	SetWriter(cssAssetWriter)
+
+	err := RenderFile("input", "output")
+
 	if err != nil {
 		t.Error("Render error")
 	}
-	
-	if string(res) != ".class {width: 2;}" {
-		t.Error("Render result invalid")
+	var expected = `.class {width: 2;}`
+	if string(res) != expected {
+		t.Error(`Render result invalid: "`, string(res), `" != "`, expected, `"`)
 	}
 }
