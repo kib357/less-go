@@ -2,9 +2,9 @@
 
 [![Build Status](https://secure.travis-ci.org/kib357/less-go.png?branch=master)](http://travis-ci.org/kib357/less-go)
 
-Less compiler for Golang
+[Less](http://lesscss.org/) compiler for [Golang](https://golang.org/)
 
-Builds CSS using original LESS compiler and Duktape embeddable Javascript engine
+Builds CSS using original [Less compiler](https://github.com/less/less.js) and [Duktape](http://duktape.org/) embeddable Javascript engine
 
 ## Status
 
@@ -43,7 +43,7 @@ Example:
 
 #### RenderFile(input, output string, mods ...map[string]interface{}) error
 
-Renders LESS and generates output CSS.
+Renders Less and generates output CSS.
 
 #### SetReader(customReader Reader)
 
