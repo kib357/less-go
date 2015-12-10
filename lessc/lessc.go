@@ -17,7 +17,7 @@ func main() {
 		},
 	}
 	input = rootCmd.PersistentFlags().StringP("input", "i", "styles.less", "Input less file")
-	output = rootCmd.PersistentFlags().StringP("iutput", "o", "styles.css", "Output less file")
+	output = rootCmd.PersistentFlags().StringP("output", "o", "styles.css", "Output css file")
 
 	rootCmd.Execute()
 }
