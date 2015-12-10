@@ -12,8 +12,8 @@ Builds css using original less compiler and Duktape embeddable Javascript engine
 
 ## Command Line usage
 
-    go build
     cd $GOPATH/src/github.com/kib357/less-go/lessc
+    go build
     ./lessc --input="inputFile" --output="outputFile"
 
 Example:
@@ -23,6 +23,36 @@ Example:
 ## Programmatic usage
 
     err := less.RenderFile("./styles.less", "./styles.css", map[string]interface{}{"compress": true})
+    
+### Function reference
+
+#### RenderFile(input, output string, mods ...map[string]interface{}) error
+
+Renders LESS and generates output CSS
+
+#### SetReader(customReader Reader)
+
+    type Reader interface {
+	    ReadFile(string) ([]byte, error)
+    }
+
+Sets a custom reader for .less files. You can use it to replace standard input from file system to string. Example:
+
+    type LessReader struct{}
+
+    func (LessReader) ReadFile(path string) ([]byte, error) {
+	    return []byte(".class { width: (1 + 1) }"), nil
+    }
+    
+    less.SetReader(LessReader)
+    
+#### SetWriter(customWriter Writer)
+
+    type Writer interface {
+	    WriteFile(string, []byte, os.FileMode) error
+    }
+    
+Analogue of custom reader, but for output CSS
 
 ## Limitations
 
