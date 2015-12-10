@@ -2,9 +2,13 @@
 
 [![Build Status](https://secure.travis-ci.org/kib357/less-go.png?branch=master)](http://travis-ci.org/kib357/less-go)
 
-Less compiler for golang
+Less compiler for Golang
 
-Builds css using original less compiler and Duktape embeddable Javascript engine
+Builds CSS using original LESS compiler and Duktape embeddable Javascript engine
+
+## Status
+
+This project is a work-in-progress, we accept pull requests.
 
 ## Installation
 
