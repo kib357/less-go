@@ -60,6 +60,6 @@ Analogue of custom reader, but for output CSS
 
 ## Limitations
 
-Because of using C++ Javascript engine, cross compilation not supported.
+Because of using C++ Javascript engine, cross compilation not supported. Not tested on Windows.
 
 CLI interface doesnt support options
