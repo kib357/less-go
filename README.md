@@ -12,12 +12,13 @@ Builds css using original less compiler and Duktape embeddable Javascript engine
 
 ## Command Line usage
 
+    go build
     cd $GOPATH/src/github.com/kib357/less-go/lessc
-    ./lessc --i inputFile --o outputFile
+    ./lessc --input="inputFile" --output="outputFile"
 
 Example:
 
-./lessc --i styles.less --o styles.css
+    ./lessc --input="./styles.less" --output="./styles.css"
 
 ## Programmatic usage
 
