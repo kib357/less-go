@@ -73,7 +73,7 @@ Sets a custom reader for .less files. You can use it to replace standard input f
     func (LessReader) ReadFile(path string) ([]byte, error) {
 	    lessFile, ok := lessFiles[path]
         if !ok {
-            return errors.New("path not found")
+            return "", errors.New("path not found")
         }
         return lessFile, nil
     }
