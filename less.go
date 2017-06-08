@@ -101,7 +101,6 @@ func (l *LessCompiler) Compile(input string, wb *bytes.Buffer, mods ...map[strin
 			var less = require('./assets/less-go');
 
 			var data = fs.readFileSync("` + input + `");
-			print('Rendering less: ', data.slice(0,50) + '...');
 			less.render(data, ` + string(encodedOptions) + `, function (e, output) {
 				if (e == null) {
 					print("Rendered");
