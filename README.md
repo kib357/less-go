@@ -42,58 +42,23 @@ More about usage you can see in cli help:
 ## Programmatic usage
 
 ```go
-    import "github.com/kib357/less-go"
+    import (
+        "github.com/kib357/less-go"
+    	"bytes"
+    )
 
     func main() {
-        err := less.RenderFile("./styles.less", "./styles.css", map[string]interface{}{"compress": true})
-    }
-```
+        w := new(bytes.Buffer)
+        lessCompiler := less.NewLessCompiler()
 
-### Function reference
+        err := lessCompiler.Compile("assets/test/signature.less", w, map[string]interface{}{"compress": true})
 
-#### RenderFile(input, output string, mods ...map[string]interface{}) error
-
-Renders Less and generates output CSS.
-
-#### SetReader(customReader Reader)
-
-```go
-    type Reader interface {
-	    ReadFile(string) ([]byte, error)
-    }
-```
-
-Sets a custom reader for .less files. You can use it to replace standard input from file system to another. Example:
-
-```go
-    type LessReader struct{}
-
-    var lessFiles = map[string][]byte{"styles": []byte{".class { width: (1 + 1) }"}}
-
-    func (LessReader) ReadFile(path string) ([]byte, error) {
-	    lessFile, ok := lessFiles[path]
-        if !ok {
-            return "", errors.New("path not found")
+        if err != nil {
+            t.Error("Render error", err)
         }
-        return lessFile, nil
-    }
-
-    func main() {
-        less.SetReader(LessReader)
-        ...
-    }
-
-```
-
-#### SetWriter(customWriter Writer)
-
-```go
-    type Writer interface {
-	    WriteFile(string, []byte, os.FileMode) error
+        res := w.String()
     }
 ```
-
-Analogue of custom reader, but for output CSS.
 
 ## Current limitations
 

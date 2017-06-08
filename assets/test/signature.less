@@ -1,0 +1,30 @@
+@import "theme-vars";
+
+.signer-box {
+  border: 1px solid @color-primary;
+}
+.signer-box .sign-actions{
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  line-height: normal;
+  vertical-align: middle;
+  background: fade(@color-primary, 40%);
+  padding: 15px 0;
+}
+.signer-box .sign-actions >button.btn {
+  margin: 5px;
+  white-space: pre-wrap;
+  text-align: center;
+  max-width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+  .text-ellipsis();
+}
+
+.signer-box .innerbtn-main:hover{
+  -webkit-box-shadow: inset 0px 0px 0px 1px @color-primary;
+  -moz-box-shadow: inset 0px 0px 0px 1px @color-primary;
+  box-shadow: inset 0px 0px 0px 1px @color-primary;
+}

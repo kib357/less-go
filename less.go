@@ -5,91 +5,86 @@ import (
 	"errors"
 	"gopkg.in/olebedev/go-duktape.v2"
 	"io/ioutil"
-	"os"
+	"bytes"
 )
 
 var (
 	ctx *duktape.Context
-	r   Reader
-	w   Writer
 )
 
-type Reader interface {
-	ReadFile(string) ([]byte, error)
+type LessCompiler struct{
+	writer *bytes.Buffer
 }
 
-type Writer interface {
-	WriteFile(string, []byte, os.FileMode) error
-}
-
-type reader struct{}
-
-func (reader) ReadFile(path string) ([]byte, error) {
-	return ioutil.ReadFile(path)
-}
-
-type writer struct{}
-
-func (writer) WriteFile(path string, data []byte, mode os.FileMode) error {
-	return ioutil.WriteFile(path, data, mode)
-}
-
-func readFile(c *duktape.Context) int {
+func (l *LessCompiler) readFile(c *duktape.Context) int {
 	var path = c.SafeToString(-1)
 	if path == "" {
 		return 0
 	}
-	bytes, err := r.ReadFile(path)
+	b, err := ioutil.ReadFile(path)
 	if err != nil {
-		bytes, err = Asset(path)
+		b, err = Asset(path)
 		if err != nil {
 			return 0
 		}
 	}
-	c.PushString(string(bytes))
+	c.PushString(string(b))
 	return 1
 }
 
-func readFileFromAssets(c *duktape.Context) int {
+func (l *LessCompiler) readFileFromAssets(c *duktape.Context) int {
 	var path = c.SafeToString(-1)
 	if path == "" {
 		return 0
 	}
-	bytes, err := Asset(path)
+	b, err := Asset(path)
 	if err != nil {
 		return 0
 	}
-	c.PushString(string(bytes))
+	c.PushString(string(b))
 	return 1
 }
 
-func writeFile(c *duktape.Context) int {
+func (l *LessCompiler) writeFile(c *duktape.Context) int {
 	var data = []byte(c.SafeToString(-1))
 	var path = c.SafeToString(-2)
 	if path == "" {
 		return 0
 	}
-	err := w.WriteFile(path, data, 0644)
-	if err != nil {
-		return 0
-	}
+	l.writer.Write(data)
 	return 1
 }
 
-func SetReader(customReader Reader) {
-	r = customReader
+func NewLessCompiler() *LessCompiler{
+	l := &LessCompiler{}
+	ctx = duktape.New()
+	ctx.PushGlobalGoFunction("readFile", l.readFile)
+	ctx.PushGlobalGoFunction("readFileFromAssets", l.readFileFromAssets)
+	ctx.PushGlobalGoFunction("writeFile", l.writeFile)
+	return l
 }
 
-func SetWriter(customWriter Writer) {
-	w = customWriter
-}
+func (l *LessCompiler) Compile(input string, wb *bytes.Buffer, mods ...map[string]interface{}) error {
+	l.writer = wb
 
-func RenderFile(input, output string, mods ...map[string]interface{}) error {
+	ctx.EvalString(`
+		Duktape.modSearch = function (id, require, exports, module) {
+			id = id.replace(/\.js$/, "");
+			var res = readFileFromAssets(id + ".js");
+			if (typeof res === 'string') {
+				return res;
+			}
+
+			var res = readFileFromAssets(id + "/index.js");
+			if (typeof res === 'string') {
+				return 'module.exports = require("' + id + '/index.js")';
+			}
+		    throw new Error('module not found: ' + id);
+		};
+	`)
+
 	if input == "" {
 		return errors.New("No input path provided")
-	}
-	if output == "" {
-		output = input + ".css"
 	}
 	var options = map[string]interface{}{}
 	if len(mods) > 0 {
@@ -110,7 +105,7 @@ func RenderFile(input, output string, mods ...map[string]interface{}) error {
 			less.render(data, ` + string(encodedOptions) + `, function (e, output) {
 				if (e == null) {
 					print("Rendered");
-					writeFile("` + output + `", output.css);
+					writeFile(null, output.css);
 				} else {
 					print('Render error', e.stack);
 					e.stack
@@ -130,28 +125,7 @@ func RenderFile(input, output string, mods ...map[string]interface{}) error {
 }
 
 func init() {
-	r = reader{}
-	w = writer{}
-	ctx = duktape.New()
-	ctx.PushGlobalGoFunction("readFile", readFile)
-	ctx.PushGlobalGoFunction("readFileFromAssets", readFileFromAssets)
-	ctx.PushGlobalGoFunction("writeFile", writeFile)
 
-	ctx.EvalString(`
-		Duktape.modSearch = function (id, require, exports, module) {
-			id = id.replace(/\.js$/, "");
-			var res = readFileFromAssets(id + ".js");
-			if (typeof res === 'string') {
-				return res;
-			}
-
-			var res = readFileFromAssets(id + "/index.js");
-			if (typeof res === 'string') {
-				return 'module.exports = require("' + id + '/index.js")';
-			}
-		    throw new Error('module not found: ' + id);
-		};
-	`)
 
 	// result := ctx.GetString(-1)
 	// ctx.Pop()
