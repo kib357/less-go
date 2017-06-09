@@ -111,7 +111,6 @@ func bindataRead(data []byte, name string) ([]byte, error) {
 	if err != nil {
 		return nil, fmt.Errorf("Read %q: %v", name, err)
 	}
-
 	var buf bytes.Buffer
 	_, err = io.Copy(&buf, gz)
 	clErr := gz.Close()
@@ -122,7 +121,6 @@ func bindataRead(data []byte, name string) ([]byte, error) {
 	if clErr != nil {
 		return nil, err
 	}
-
 	return buf.Bytes(), nil
 }
 
@@ -167,13 +165,13 @@ func assetsDs_storeBytes() ([]byte, error) {
 }
 
 func assetsDs_store() (*asset, error) {
-	bytes, err := assetsDs_storeBytes()
+	b, err := assetsDs_storeBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/.DS_Store", size: 6148, mode: os.FileMode(420), modTime: time.Unix(1449563651, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -187,13 +185,13 @@ func assetsLessDs_storeBytes() ([]byte, error) {
 }
 
 func assetsLessDs_store() (*asset, error) {
-	bytes, err := assetsLessDs_storeBytes()
+	b, err := assetsLessDs_storeBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/.DS_Store", size: 8196, mode: os.FileMode(420), modTime: time.Unix(1448616499, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -207,13 +205,13 @@ func assetsLessContextsJsBytes() ([]byte, error) {
 }
 
 func assetsLessContextsJs() (*asset, error) {
-	bytes, err := assetsLessContextsJsBytes()
+	b, err := assetsLessContextsJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/contexts.js", size: 4028, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -227,13 +225,13 @@ func assetsLessDataColorsJsBytes() ([]byte, error) {
 }
 
 func assetsLessDataColorsJs() (*asset, error) {
-	bytes, err := assetsLessDataColorsJsBytes()
+	b, err := assetsLessDataColorsJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/data/colors.js", size: 4006, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -247,13 +245,13 @@ func assetsLessDataIndexJsBytes() ([]byte, error) {
 }
 
 func assetsLessDataIndexJs() (*asset, error) {
-	bytes, err := assetsLessDataIndexJsBytes()
+	b, err := assetsLessDataIndexJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/data/index.js", size: 106, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -267,13 +265,13 @@ func assetsLessDataUnitConversionsJsBytes() ([]byte, error) {
 }
 
 func assetsLessDataUnitConversionsJs() (*asset, error) {
-	bytes, err := assetsLessDataUnitConversionsJsBytes()
+	b, err := assetsLessDataUnitConversionsJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/data/unit-conversions.js", size: 385, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -287,13 +285,13 @@ func assetsLessEnvironmentAbstractFileManagerJsBytes() ([]byte, error) {
 }
 
 func assetsLessEnvironmentAbstractFileManagerJs() (*asset, error) {
-	bytes, err := assetsLessEnvironmentAbstractFileManagerJsBytes()
+	b, err := assetsLessEnvironmentAbstractFileManagerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/environment/abstract-file-manager.js", size: 3970, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -307,13 +305,13 @@ func assetsLessEnvironmentEnvironmentApiJsBytes() ([]byte, error) {
 }
 
 func assetsLessEnvironmentEnvironmentApiJs() (*asset, error) {
-	bytes, err := assetsLessEnvironmentEnvironmentApiJsBytes()
+	b, err := assetsLessEnvironmentEnvironmentApiJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/environment/environment-api.js", size: 508, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -327,13 +325,13 @@ func assetsLessEnvironmentEnvironmentJsBytes() ([]byte, error) {
 }
 
 func assetsLessEnvironmentEnvironmentJs() (*asset, error) {
-	bytes, err := assetsLessEnvironmentEnvironmentJsBytes()
+	b, err := assetsLessEnvironmentEnvironmentJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/environment/environment.js", size: 1877, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -347,13 +345,13 @@ func assetsLessEnvironmentFileManagerApiJsBytes() ([]byte, error) {
 }
 
 func assetsLessEnvironmentFileManagerApiJs() (*asset, error) {
-	bytes, err := assetsLessEnvironmentFileManagerApiJsBytes()
+	b, err := assetsLessEnvironmentFileManagerApiJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/environment/file-manager-api.js", size: 3426, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -367,13 +365,13 @@ func assetsLessFunctionsColorBlendingJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsColorBlendingJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsColorBlendingJsBytes()
+	b, err := assetsLessFunctionsColorBlendingJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/color-blending.js", size: 1940, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -387,13 +385,13 @@ func assetsLessFunctionsColorJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsColorJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsColorJsBytes()
+	b, err := assetsLessFunctionsColorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/color.js", size: 9354, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -407,13 +405,13 @@ func assetsLessFunctionsDataUriJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsDataUriJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsDataUriJsBytes()
+	b, err := assetsLessFunctionsDataUriJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/data-uri.js", size: 3288, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -427,13 +425,13 @@ func assetsLessFunctionsDefaultJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsDefaultJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsDefaultJsBytes()
+	b, err := assetsLessFunctionsDefaultJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/default.js", size: 624, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -447,13 +445,13 @@ func assetsLessFunctionsFunctionCallerJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsFunctionCallerJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsFunctionCallerJsBytes()
+	b, err := assetsLessFunctionsFunctionCallerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/function-caller.js", size: 1401, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -467,13 +465,13 @@ func assetsLessFunctionsFunctionRegistryJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsFunctionRegistryJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsFunctionRegistryJsBytes()
+	b, err := assetsLessFunctionsFunctionRegistryJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/function-registry.js", size: 874, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -487,13 +485,13 @@ func assetsLessFunctionsIndexJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsIndexJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsIndexJsBytes()
+	b, err := assetsLessFunctionsIndexJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/index.js", size: 488, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -507,13 +505,13 @@ func assetsLessFunctionsMathHelperJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsMathHelperJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsMathHelperJsBytes()
+	b, err := assetsLessFunctionsMathHelperJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/math-helper.js", size: 418, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -527,13 +525,13 @@ func assetsLessFunctionsMathJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsMathJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsMathJsBytes()
+	b, err := assetsLessFunctionsMathJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/math.js", size: 714, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -547,13 +545,13 @@ func assetsLessFunctionsNumberJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsNumberJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsNumberJsBytes()
+	b, err := assetsLessFunctionsNumberJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/number.js", size: 3466, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -567,13 +565,13 @@ func assetsLessFunctionsStringJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsStringJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsStringJsBytes()
+	b, err := assetsLessFunctionsStringJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/string.js", size: 1630, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -587,13 +585,13 @@ func assetsLessFunctionsSvgJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsSvgJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsSvgJsBytes()
+	b, err := assetsLessFunctionsSvgJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/svg.js", size: 3897, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -607,13 +605,13 @@ func assetsLessFunctionsTypesJsBytes() ([]byte, error) {
 }
 
 func assetsLessFunctionsTypesJs() (*asset, error) {
-	bytes, err := assetsLessFunctionsTypesJsBytes()
+	b, err := assetsLessFunctionsTypesJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/functions/types.js", size: 2831, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -627,13 +625,13 @@ func assetsLessImportManagerJsBytes() ([]byte, error) {
 }
 
 func assetsLessImportManagerJs() (*asset, error) {
-	bytes, err := assetsLessImportManagerJsBytes()
+	b, err := assetsLessImportManagerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/import-manager.js", size: 5816, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -647,13 +645,13 @@ func assetsLessIndexJsBytes() ([]byte, error) {
 }
 
 func assetsLessIndexJs() (*asset, error) {
-	bytes, err := assetsLessIndexJsBytes()
+	b, err := assetsLessIndexJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/index.js", size: 1420, mode: os.FileMode(420), modTime: time.Unix(1443181673, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -667,13 +665,13 @@ func assetsLessLessErrorJsBytes() ([]byte, error) {
 }
 
 func assetsLessLessErrorJs() (*asset, error) {
-	bytes, err := assetsLessLessErrorJsBytes()
+	b, err := assetsLessLessErrorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/less-error.js", size: 1231, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -687,13 +685,13 @@ func assetsLessLoggerJsBytes() ([]byte, error) {
 }
 
 func assetsLessLoggerJs() (*asset, error) {
-	bytes, err := assetsLessLoggerJsBytes()
+	b, err := assetsLessLoggerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/logger.js", size: 915, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -707,13 +705,13 @@ func assetsLessParseTreeJsBytes() ([]byte, error) {
 }
 
 func assetsLessParseTreeJs() (*asset, error) {
-	bytes, err := assetsLessParseTreeJsBytes()
+	b, err := assetsLessParseTreeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/parse-tree.js", size: 2166, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -727,13 +725,13 @@ func assetsLessParseJsBytes() ([]byte, error) {
 }
 
 func assetsLessParseJs() (*asset, error) {
-	bytes, err := assetsLessParseJsBytes()
+	b, err := assetsLessParseJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/parse.js", size: 2398, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -747,13 +745,13 @@ func assetsLessParserChunkerJsBytes() ([]byte, error) {
 }
 
 func assetsLessParserChunkerJs() (*asset, error) {
-	bytes, err := assetsLessParserChunkerJsBytes()
+	b, err := assetsLessParserChunkerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/parser/chunker.js", size: 5114, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -767,13 +765,13 @@ func assetsLessParserParserInputJsBytes() ([]byte, error) {
 }
 
 func assetsLessParserParserInputJs() (*asset, error) {
-	bytes, err := assetsLessParserParserInputJsBytes()
+	b, err := assetsLessParserParserInputJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/parser/parser-input.js", size: 8722, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -787,13 +785,13 @@ func assetsLessParserParserJsBytes() ([]byte, error) {
 }
 
 func assetsLessParserParserJs() (*asset, error) {
-	bytes, err := assetsLessParserParserJsBytes()
+	b, err := assetsLessParserParserJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/parser/parser.js", size: 68632, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -807,13 +805,13 @@ func assetsLessPluginManagerJsBytes() ([]byte, error) {
 }
 
 func assetsLessPluginManagerJs() (*asset, error) {
-	bytes, err := assetsLessPluginManagerJsBytes()
+	b, err := assetsLessPluginManagerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/plugin-manager.js", size: 3031, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -827,13 +825,13 @@ func assetsLessPluginsFunctionImporterJsBytes() ([]byte, error) {
 }
 
 func assetsLessPluginsFunctionImporterJs() (*asset, error) {
-	bytes, err := assetsLessPluginsFunctionImporterJsBytes()
+	b, err := assetsLessPluginsFunctionImporterJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/plugins/function-importer.js", size: 1004, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -847,13 +845,13 @@ func assetsLessRenderJsBytes() ([]byte, error) {
 }
 
 func assetsLessRenderJs() (*asset, error) {
-	bytes, err := assetsLessRenderJsBytes()
+	b, err := assetsLessRenderJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/render.js", size: 1297, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -867,13 +865,13 @@ func assetsLessSourceMapBuilderJsBytes() ([]byte, error) {
 }
 
 func assetsLessSourceMapBuilderJs() (*asset, error) {
-	bytes, err := assetsLessSourceMapBuilderJsBytes()
+	b, err := assetsLessSourceMapBuilderJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/source-map-builder.js", size: 2586, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -887,13 +885,13 @@ func assetsLessSourceMapOutputJsBytes() ([]byte, error) {
 }
 
 func assetsLessSourceMapOutputJs() (*asset, error) {
-	bytes, err := assetsLessSourceMapOutputJsBytes()
+	b, err := assetsLessSourceMapOutputJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/source-map-output.js", size: 5230, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -907,13 +905,13 @@ func assetsLessTransformTreeJsBytes() ([]byte, error) {
 }
 
 func assetsLessTransformTreeJs() (*asset, error) {
-	bytes, err := assetsLessTransformTreeJsBytes()
+	b, err := assetsLessTransformTreeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/transform-tree.js", size: 2196, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -927,13 +925,13 @@ func assetsLessTreeAlphaJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeAlphaJs() (*asset, error) {
-	bytes, err := assetsLessTreeAlphaJsBytes()
+	b, err := assetsLessTreeAlphaJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/alpha.js", size: 641, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -947,13 +945,13 @@ func assetsLessTreeAnonymousJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeAnonymousJs() (*asset, error) {
-	bytes, err := assetsLessTreeAnonymousJsBytes()
+	b, err := assetsLessTreeAnonymousJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/anonymous.js", size: 1223, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -967,13 +965,13 @@ func assetsLessTreeAssignmentJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeAssignmentJs() (*asset, error) {
-	bytes, err := assetsLessTreeAssignmentJsBytes()
+	b, err := assetsLessTreeAssignmentJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/assignment.js", size: 707, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -987,13 +985,13 @@ func assetsLessTreeAttributeJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeAttributeJs() (*asset, error) {
-	bytes, err := assetsLessTreeAttributeJsBytes()
+	b, err := assetsLessTreeAttributeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/attribute.js", size: 840, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1007,13 +1005,13 @@ func assetsLessTreeCallJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeCallJs() (*asset, error) {
-	bytes, err := assetsLessTreeCallJsBytes()
+	b, err := assetsLessTreeCallJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/call.js", size: 2087, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1027,13 +1025,13 @@ func assetsLessTreeColorJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeColorJs() (*asset, error) {
-	bytes, err := assetsLessTreeColorJsBytes()
+	b, err := assetsLessTreeColorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/color.js", size: 5506, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1047,13 +1045,13 @@ func assetsLessTreeCombinatorJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeCombinatorJs() (*asset, error) {
-	bytes, err := assetsLessTreeCombinatorJsBytes()
+	b, err := assetsLessTreeCombinatorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/combinator.js", size: 668, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1067,13 +1065,13 @@ func assetsLessTreeCommentJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeCommentJs() (*asset, error) {
-	bytes, err := assetsLessTreeCommentJsBytes()
+	b, err := assetsLessTreeCommentJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/comment.js", size: 918, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1087,13 +1085,13 @@ func assetsLessTreeConditionJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeConditionJs() (*asset, error) {
-	bytes, err := assetsLessTreeConditionJsBytes()
+	b, err := assetsLessTreeConditionJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/condition.js", size: 1215, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1107,13 +1105,13 @@ func assetsLessTreeDebugInfoJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeDebugInfoJs() (*asset, error) {
-	bytes, err := assetsLessTreeDebugInfoJsBytes()
+	b, err := assetsLessTreeDebugInfoJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/debug-info.js", size: 1277, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1127,13 +1125,13 @@ func assetsLessTreeDetachedRulesetJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeDetachedRulesetJs() (*asset, error) {
-	bytes, err := assetsLessTreeDetachedRulesetJsBytes()
+	b, err := assetsLessTreeDetachedRulesetJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/detached-ruleset.js", size: 802, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1147,13 +1145,13 @@ func assetsLessTreeDimensionJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeDimensionJs() (*asset, error) {
-	bytes, err := assetsLessTreeDimensionJsBytes()
+	b, err := assetsLessTreeDimensionJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/dimension.js", size: 5079, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1167,13 +1165,13 @@ func assetsLessTreeDirectiveJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeDirectiveJs() (*asset, error) {
-	bytes, err := assetsLessTreeDirectiveJsBytes()
+	b, err := assetsLessTreeDirectiveJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/directive.js", size: 4762, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1187,13 +1185,13 @@ func assetsLessTreeElementJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeElementJs() (*asset, error) {
-	bytes, err := assetsLessTreeElementJsBytes()
+	b, err := assetsLessTreeElementJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/element.js", size: 1865, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1207,13 +1205,13 @@ func assetsLessTreeExpressionJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeExpressionJs() (*asset, error) {
-	bytes, err := assetsLessTreeExpressionJsBytes()
+	b, err := assetsLessTreeExpressionJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/expression.js", size: 1874, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1227,13 +1225,13 @@ func assetsLessTreeExtendJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeExtendJs() (*asset, error) {
-	bytes, err := assetsLessTreeExtendJsBytes()
+	b, err := assetsLessTreeExtendJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/extend.js", size: 1612, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1247,13 +1245,13 @@ func assetsLessTreeImportJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeImportJs() (*asset, error) {
-	bytes, err := assetsLessTreeImportJsBytes()
+	b, err := assetsLessTreeImportJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/import.js", size: 4896, mode: os.FileMode(420), modTime: time.Unix(1443169287, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1267,13 +1265,13 @@ func assetsLessTreeIndexJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeIndexJs() (*asset, error) {
-	bytes, err := assetsLessTreeIndexJsBytes()
+	b, err := assetsLessTreeIndexJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/index.js", size: 1403, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1287,13 +1285,13 @@ func assetsLessTreeJavascriptJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeJavascriptJs() (*asset, error) {
-	bytes, err := assetsLessTreeJavascriptJsBytes()
+	b, err := assetsLessTreeJavascriptJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/javascript.js", size: 939, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1307,13 +1305,13 @@ func assetsLessTreeJsEvalNodeJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeJsEvalNodeJs() (*asset, error) {
-	bytes, err := assetsLessTreeJsEvalNodeJsBytes()
+	b, err := assetsLessTreeJsEvalNodeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/js-eval-node.js", size: 1978, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1327,13 +1325,13 @@ func assetsLessTreeKeywordJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeKeywordJs() (*asset, error) {
-	bytes, err := assetsLessTreeKeywordJsBytes()
+	b, err := assetsLessTreeKeywordJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/keyword.js", size: 439, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1347,13 +1345,13 @@ func assetsLessTreeMediaJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeMediaJs() (*asset, error) {
-	bytes, err := assetsLessTreeMediaJsBytes()
+	b, err := assetsLessTreeMediaJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/media.js", size: 4377, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1367,13 +1365,13 @@ func assetsLessTreeMixinCallJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeMixinCallJs() (*asset, error) {
-	bytes, err := assetsLessTreeMixinCallJsBytes()
+	b, err := assetsLessTreeMixinCallJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/mixin-call.js", size: 6994, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1387,13 +1385,13 @@ func assetsLessTreeMixinDefinitionJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeMixinDefinitionJs() (*asset, error) {
-	bytes, err := assetsLessTreeMixinDefinitionJsBytes()
+	b, err := assetsLessTreeMixinDefinitionJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/mixin-definition.js", size: 7083, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1407,13 +1405,13 @@ func assetsLessTreeNegativeJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeNegativeJs() (*asset, error) {
-	bytes, err := assetsLessTreeNegativeJsBytes()
+	b, err := assetsLessTreeNegativeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/negative.js", size: 610, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1427,13 +1425,13 @@ func assetsLessTreeNodeJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeNodeJs() (*asset, error) {
-	bytes, err := assetsLessTreeNodeJsBytes()
+	b, err := assetsLessTreeNodeJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/node.js", size: 2077, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1447,13 +1445,13 @@ func assetsLessTreeOperationJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeOperationJs() (*asset, error) {
-	bytes, err := assetsLessTreeOperationJsBytes()
+	b, err := assetsLessTreeOperationJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/operation.js", size: 1374, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1467,13 +1465,13 @@ func assetsLessTreeParenJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeParenJs() (*asset, error) {
-	bytes, err := assetsLessTreeParenJsBytes()
+	b, err := assetsLessTreeParenJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/paren.js", size: 407, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1487,13 +1485,13 @@ func assetsLessTreeQuotedJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeQuotedJs() (*asset, error) {
-	bytes, err := assetsLessTreeQuotedJsBytes()
+	b, err := assetsLessTreeQuotedJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/quoted.js", size: 2160, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1507,13 +1505,13 @@ func assetsLessTreeRuleJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeRuleJs() (*asset, error) {
-	bytes, err := assetsLessTreeRuleJsBytes()
+	b, err := assetsLessTreeRuleJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/rule.js", size: 3804, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1527,13 +1525,13 @@ func assetsLessTreeRulesetCallJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeRulesetCallJs() (*asset, error) {
-	bytes, err := assetsLessTreeRulesetCallJsBytes()
+	b, err := assetsLessTreeRulesetCallJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/ruleset-call.js", size: 420, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1547,13 +1545,13 @@ func assetsLessTreeRulesetJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeRulesetJs() (*asset, error) {
-	bytes, err := assetsLessTreeRulesetJsBytes()
+	b, err := assetsLessTreeRulesetJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/ruleset.js", size: 25681, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1567,13 +1565,13 @@ func assetsLessTreeSelectorJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeSelectorJs() (*asset, error) {
-	bytes, err := assetsLessTreeSelectorJsBytes()
+	b, err := assetsLessTreeSelectorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/selector.js", size: 3878, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1587,13 +1585,13 @@ func assetsLessTreeUnicodeDescriptorJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeUnicodeDescriptorJs() (*asset, error) {
-	bytes, err := assetsLessTreeUnicodeDescriptorJsBytes()
+	b, err := assetsLessTreeUnicodeDescriptorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/unicode-descriptor.js", size: 236, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1607,13 +1605,13 @@ func assetsLessTreeUnitJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeUnitJs() (*asset, error) {
-	bytes, err := assetsLessTreeUnitJsBytes()
+	b, err := assetsLessTreeUnitJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/unit.js", size: 3736, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1627,13 +1625,13 @@ func assetsLessTreeUrlJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeUrlJs() (*asset, error) {
-	bytes, err := assetsLessTreeUrlJsBytes()
+	b, err := assetsLessTreeUrlJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/url.js", size: 1707, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1647,13 +1645,13 @@ func assetsLessTreeValueJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeValueJs() (*asset, error) {
-	bytes, err := assetsLessTreeValueJsBytes()
+	b, err := assetsLessTreeValueJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/value.js", size: 925, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1667,13 +1665,13 @@ func assetsLessTreeVariableJsBytes() ([]byte, error) {
 }
 
 func assetsLessTreeVariableJs() (*asset, error) {
-	bytes, err := assetsLessTreeVariableJsBytes()
+	b, err := assetsLessTreeVariableJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/tree/variable.js", size: 1616, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1687,13 +1685,13 @@ func assetsLessUtilsJsBytes() ([]byte, error) {
 }
 
 func assetsLessUtilsJs() (*asset, error) {
-	bytes, err := assetsLessUtilsJsBytes()
+	b, err := assetsLessUtilsJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/utils.js", size: 455, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1707,13 +1705,13 @@ func assetsLessVisitorsExtendVisitorJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsExtendVisitorJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsExtendVisitorJsBytes()
+	b, err := assetsLessVisitorsExtendVisitorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/extend-visitor.js", size: 21051, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1727,13 +1725,13 @@ func assetsLessVisitorsImportSequencerJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsImportSequencerJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsImportSequencerJsBytes()
+	b, err := assetsLessVisitorsImportSequencerJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/import-sequencer.js", size: 1576, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1747,13 +1745,13 @@ func assetsLessVisitorsImportVisitorJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsImportVisitorJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsImportVisitorJsBytes()
+	b, err := assetsLessVisitorsImportVisitorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/import-visitor.js", size: 6338, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1767,13 +1765,13 @@ func assetsLessVisitorsIndexJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsIndexJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsIndexJsBytes()
+	b, err := assetsLessVisitorsIndexJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/index.js", size: 286, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1787,13 +1785,13 @@ func assetsLessVisitorsJoinSelectorVisitorJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsJoinSelectorVisitorJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsJoinSelectorVisitorJsBytes()
+	b, err := assetsLessVisitorsJoinSelectorVisitorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/join-selector-visitor.js", size: 1831, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1807,13 +1805,13 @@ func assetsLessVisitorsToCssVisitorJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsToCssVisitorJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsToCssVisitorJsBytes()
+	b, err := assetsLessVisitorsToCssVisitorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/to-css-visitor.js", size: 10720, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1827,93 +1825,277 @@ func assetsLessVisitorsVisitorJsBytes() ([]byte, error) {
 }
 
 func assetsLessVisitorsVisitorJs() (*asset, error) {
-	bytes, err := assetsLessVisitorsVisitorJsBytes()
+	b, err := assetsLessVisitorsVisitorJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less/visitors/visitor.js", size: 3985, mode: os.FileMode(420), modTime: time.Unix(1443169064, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
-var _assetsLessGoEnvironmentJs = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\xa4\x56\xfb\x57\xdb\x36\x14\xfe\xdd\x7f\xc5\x3d\xf9\x01\x6c\x92\x59\xc4\x76\xd3\x94\x00\x3b\x2d\x5b\xbb\x07\x65\x0f\xe8\x5e\x4d\xc7\x31\x8e\x92\xb8\x71\x24\x57\x96\x09\x6c\xe3\x7f\xdf\x95\xe4\xb8\xb2\x09\x25\x5b\xcd\x39\xb6\xb9\x8f\xef\x7e\xf7\x4a\x9f\x95\xeb\x58\x80\xbc\xcd\x69\x01\x47\x20\xe8\x87\x32\x15\xd4\xed\xf8\x64\x99\x2e\xe9\x85\x32\xfb\xef\x8b\x8e\x37\x72\x1c\xb2\xb7\xe7\xe0\x1f\xc0\x8b\xb8\xa0\x83\x08\x28\x4b\xf8\x84\x02\x81\x09\x55\x2f\xca\x33\x97\x32\x3f\x20\x64\xb5\x5a\xf9\x2b\x7a\x25\x39\xcf\x16\xa9\xf4\x53\x36\xe5\x44\xa5\xee\x11\x47\x15\xab\xf2\x8f\xe0\x6f\x07\xf0\x22\x04\x72\x91\x5e\xc7\x92\xe2\x93\xe7\x54\xc8\x5b\x6d\xbf\x5c\xd0\xdb\x73\x29\x0e\xa0\xf3\xfc\xc5\xc9\x57\x5f\xbf\x7c\xf5\xcd\xb7\xdf\x7d\x7f\xfa\xfa\xec\x87\x1f\x7f\xfa\xf9\xfc\xe2\xcd\x2f\xbf\xfe\xf6\xfb\x1f\xf1\x55\x32\xa1\xd3\xd9\x3c\x7d\xbf\xc8\x96\x8c\xe7\x1f\x44\x21\xcb\xeb\xd5\xcd\xed\x5f\xfb\xfd\x20\x8c\x9e\x0c\x9e\x0e\x9f\x75\xc9\x51\xa7\xe7\xd4\xa5\xca\xab\x2c\x4d\x60\x49\xe5\x9c\x4f\x60\xca\x85\xe9\x23\x65\x33\x1d\x61\x9a\x3a\x80\x69\xc9\x12\x99\x72\x06\x6e\xca\xf2\x52\x7a\x15\x57\x75\xa9\x16\x78\x29\xd1\x8a\x2d\x74\x3a\xa3\x86\x23\x99\x8b\x7e\x4f\xdd\x03\x7d\x0f\x7b\x0a\xb1\xaf\xef\x81\xbe\x1b\x4b\xd4\xcc\x4a\x11\x69\x7f\xe4\xd4\x36\x5d\x13\x6d\x66\x52\xfe\x65\x29\xa7\xc3\x4b\x43\xad\xe2\x63\x05\xaf\xe6\x69\x46\x91\x27\x1c\x9a\x3c\x3f\xa3\x6c\x26\xe7\x8a\x72\x1d\xa3\x2e\x45\x0d\x31\x4d\x4c\x32\x8f\xc5\x09\xc2\x3d\x97\x6e\xda\xed\x7a\xa3\x76\x64\xb0\x75\x64\xf8\x70\x64\x23\x54\xcd\x01\x43\x35\x8b\xe3\x63\x08\x46\x6d\xaf\x2a\xe9\xba\xda\xbf\x03\xa1\x07\x87\x87\x10\x79\xf0\x0f\xb8\x9a\x0e\xa6\x44\xde\xbd\x9c\x70\x9d\x13\x60\x4e\xff\x89\x4e\x0a\xd6\x49\xa1\x4a\x1a\xdc\x4f\x8a\x0c\x8d\x10\x53\x06\x61\x8b\x65\x3a\xc5\x49\x16\x67\xf1\x99\x06\xf5\xec\x75\x6f\x95\xad\x80\x06\x51\x13\xff\x0e\x68\x56\xd0\x26\x4e\xf8\x10\xce\x46\x80\x26\xa1\x7a\xa7\x55\x2f\xdd\x86\x57\xce\xd3\xc2\xaf\x84\xa2\xe7\x8f\xb3\x57\x83\xf6\xa0\xfb\x90\x0f\xc7\xb3\x15\x46\xf8\x09\x8c\xc8\x5e\x5c\x8b\xb0\xa0\xb2\x14\xac\xa2\x6a\xda\xba\xeb\xe9\x47\x5b\xe9\x96\xfe\xde\x5c\xbc\xfc\x62\xd8\x54\xa1\xbd\xe1\x6d\x2d\x16\x52\x60\x88\x3d\x4c\x63\xc1\xf1\x98\x17\x5f\xd0\x3c\x8b\x13\xea\x92\xb1\x18\x33\x32\xeb\x41\x67\xcc\x3a\x5e\x53\x6d\x08\x2e\xe9\xcd\x5a\xbd\xb5\x4b\x71\x71\x95\x9f\x69\x35\xe2\xe3\x70\x8d\x6a\x14\x85\x26\xdc\xd6\x6d\x59\x69\xd5\x7f\x24\x60\x89\x80\xb5\x25\xa0\x36\x45\x82\xa8\xfd\x60\xb8\x69\x43\xac\x79\x75\x8f\xe0\xdc\x80\x4d\x05\x5f\x9e\x54\x80\x6e\xe2\xb5\x37\x8a\xfd\x5f\xbd\xeb\xb0\xc2\x31\x56\x78\xea\xc1\xce\x8e\x29\x17\xec\x47\xc3\x8d\x3b\xf0\x91\x82\x0a\x49\x09\x08\xe5\xd4\x7f\x16\xb4\xaa\x6f\x97\xaf\x14\xa6\xf3\xb1\xe3\x47\xd9\xff\x4f\x82\x7d\x2d\xf8\x20\x68\x7f\x1e\xb6\x01\xa8\x5b\x7c\x98\xe8\xe7\x37\xfa\x09\xa5\x54\xc0\x95\x54\x1c\x0c\x70\x96\x7c\x52\x66\xd4\xa7\x37\x39\x17\xb2\xa8\x4f\x49\x23\x06\x73\x20\x58\x92\xb0\xcd\x4a\x1e\xf6\x32\x57\x35\xaa\x43\xa4\x3a\x3e\x54\x4c\x43\x99\xea\x9c\x3f\xe5\x7c\x51\xe6\xb6\xd2\xa6\x78\xa6\xb0\x78\x49\x6d\x3c\x42\x54\xb7\xa0\x5a\xd7\x59\xc0\xf2\x25\xe4\x71\xb2\x88\x67\xb4\x21\x30\x23\xae\x35\xc4\x47\x4d\xfa\x7b\x6f\xc7\xfe\x98\x8c\xc7\xef\x48\x0f\x76\x77\x3d\x5f\xf2\x53\xbe\xa2\xe2\x04\x19\xba\xd6\xd8\x2a\xe2\xfa\x47\xc9\x5b\x04\x7b\xd7\x20\xac\x14\x56\x50\x79\x9f\xb3\xe2\xf4\x9f\xf9\x56\xb5\x5c\xf2\xa7\x5a\x88\x31\x21\xc8\x8a\x16\xb2\x02\xfb\x12\x76\xf5\xe7\x69\x17\x0e\x80\x95\x59\xd6\x20\x32\xa3\xf2\x9c\x97\x22\xa1\xaf\xe3\xfc\x15\x65\x54\xc4\x92\x0b\x8b\xd0\x46\xbf\xbb\x61\x85\x2c\x64\xe7\x6e\xf4\x6f\x00\x00\x00\xff\xff\xa0\x94\x9d\xfb\x90\x09\x00\x00")
+var _assetsLessGoEnvironmentJs = []byte(
+`var types = require("./mimeTypes.js");
 
-func assetsLessGoEnvironmentJsBytes() ([]byte, error) {
-	return bindataRead(
-		_assetsLessGoEnvironmentJs,
-		"assets/less-go/environment.js",
-	)
+/**
+*
+*  Base64 encode / decode
+*  http://www.webtoolkit.info/
+*
+**/
+var Base64 = {
+    // private property
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+    // public method for encoding
+    encode: function (input) {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = Base64._utf8_encode(input);
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output = output +
+            this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+            this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+        }
+
+        return output;
+    },
+
+    // private method for UTF-8 encoding
+    _utf8_encode: function (string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+
+            var c = string.charCodeAt(n);
+
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        }
+
+        return utftext;
+    }
 }
+
+
+module.exports = {
+    encodeBase64: function encodeBase64(str) {
+        return Base64.encode(str);
+    },
+    mimeLookup: function (filename) {
+        //Code from mime npm package
+        var ext = filename.replace(/.*[\.\/\\]/, '').toLowerCase();
+        return types[ext];
+    },
+    charsetLookup: function (mime) {
+        //Code from mime npm package
+        return (/^text\//).test(mime) ? 'UTF-8' : null;
+    },
+    getSourceMapGenerator: function getSourceMapGenerator() {
+        return null;
+    }
+};`)
 
 func assetsLessGoEnvironmentJs() (*asset, error) {
-	bytes, err := assetsLessGoEnvironmentJsBytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindataFileInfo{name: "assets/less-go/environment.js", size: 2448, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+	b := _assetsLessGoEnvironmentJs
+	info := bindataFileInfo{name: "assets/less-go/environment.js", size: int64(len(b)), mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
-var _assetsLessGoFileManagerJs = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\xb4\x57\x5f\x6f\xdb\x36\x10\x7f\xf7\xa7\xb8\xea\xa1\x92\x10\x5b\x6e\xdf\x06\x6b\x41\x31\x6c\x28\x50\x60\xc3\x0a\x6c\x6f\x41\x1e\x68\x99\x8a\x99\xca\xa4\x46\x52\x75\x8c\xd4\xdf\x7d\x77\x12\x69\x53\x96\xe5\x64\xc9\xe2\x27\x89\x77\xbc\x3f\xbf\xbb\xfb\x9d\xfc\x9d\x69\xa8\x99\x5d\xc3\x35\x68\xfe\x4f\x23\x34\x4f\xe2\x6c\x4e\x27\x71\x3a\x9d\x00\xfe\x4a\xd3\x97\x95\xc6\x4b\xbe\x6a\xb5\x11\x86\xff\xaa\xa4\xb1\xba\x29\xac\xd2\xdd\xf9\x2f\x4b\x7c\x67\x85\xfd\x2c\x2a\xfe\x07\x93\xec\x8e\xeb\xc0\x44\x94\x65\xf3\x8a\x1b\x33\xe7\xf2\xbb\xd0\x4a\x6e\xb8\xb4\x73\xe6\xae\xcc\x4a\xbc\x33\xdb\x74\x97\xb2\x7b\x13\xa5\xf9\x64\x62\xf5\x0e\x1e\x47\x3c\xa2\x61\xbb\xab\xb9\x2a\xbd\x0c\xae\xaf\xaf\x21\x6e\xe4\x8a\x97\x42\xf2\x55\x0c\x9f\x8e\xc1\xd7\x9d\x4a\x9c\xc2\xc2\xab\xe7\x93\x3d\x14\xcc\x16\xeb\x84\xa7\xe8\x64\x3f\x99\x10\x22\xfd\xc8\xcb\x46\x16\x56\x28\x99\xb4\x1a\x18\x50\x20\xce\xd0\xa6\x55\x14\x02\x2a\x4a\xbe\x3d\x97\x7c\x92\x8e\xdd\xc9\x4c\x53\xd7\x4a\x5b\x13\x7a\x21\x08\x24\xdb\xf0\x29\x14\x8d\xd6\x88\xce\x6f\x18\x3c\xe5\xba\x9b\x82\xaa\x49\xc5\x4c\x21\x00\x2f\x75\xe0\xd4\x5a\x48\x9b\xc4\xde\x64\x8c\x5e\xe9\x58\x73\xdb\x68\x09\x88\x17\x25\x9b\x3f\x11\xc8\x5f\x3b\x59\xbc\x41\x30\x64\x76\x2c\xa0\x91\x88\x2a\xc5\x56\x24\x79\x4d\x34\xa8\xc7\xaa\x6a\xc9\x8a\x6f\xfd\xb8\x22\x6f\x3c\x72\x31\x51\xd1\xcb\xa6\xaa\x3e\x7b\x07\xed\x29\xfd\x56\xcc\xb2\xe3\x9b\x30\x58\x5f\x55\x35\x96\x7b\x4d\x6a\xc0\xb5\x30\x99\x30\x5f\x71\x68\xbc\xf4\x10\x69\x7a\xbc\xeb\x8f\xcc\xdf\x5a\xf0\x15\xde\xbb\xb9\xc5\xe4\x49\xe2\x42\xc7\x23\xff\xf4\xe3\x07\x3c\xee\x9d\x54\x94\x90\xb8\xf3\xcc\x20\x8e\x5f\x36\x04\x29\xa9\xbc\x1b\xce\x83\xcf\x33\xc8\xf5\x77\xcc\x55\xc8\x3b\xa0\xbb\x3e\x5f\x9f\x99\x8f\xde\xe3\x41\x75\x7a\x01\xca\x71\x63\xcb\xd9\x4f\x71\x60\xdc\xe3\x9e\x90\x97\x8c\x6b\x8d\xe4\xd0\x7a\x0c\x74\xba\x46\xe8\xde\xf7\x93\x43\x1d\x88\x7c\x08\x8b\x33\x58\x7f\x82\x9b\x28\xba\xc5\xe9\xbd\x39\x8d\xec\x36\x1f\x60\xd5\xda\x41\x3c\x3a\x83\x59\xdd\x98\x75\xc6\xea\xba\xda\x25\xed\xc1\x21\x17\xa7\x98\x63\x0c\xde\xc4\xbb\x33\xbe\xdf\xbf\x77\x86\x04\x72\xcb\xc3\x9f\x25\x72\x21\x12\x09\xb1\xcd\xec\x63\xdf\x4b\x2b\xc9\x7d\x4a\xf3\x39\x38\xde\xc1\x8c\xe0\xae\x61\x14\x37\xc7\x06\xb0\x0a\x96\x1c\x18\x95\x05\x81\x54\x8d\xf1\xea\xdb\xb5\x28\xd6\xb0\xe6\x55\x6d\x50\x0c\xc2\x02\x82\xa9\xb6\x06\x4b\xc5\xdb\x2e\x82\x35\x93\xab\x8a\x7b\xfd\xce\x50\x51\x29\x83\x56\x97\xbc\x54\x9a\xd3\xa5\x42\x49\x2b\x64\xc3\x0d\x6c\x05\x12\x3c\x5d\x96\xfc\xc1\xb6\x16\xc2\x41\x24\xd6\x1a\x36\x52\x72\x1c\xba\xa6\xc2\x2b\xd5\x14\xf5\xef\x11\xec\xb0\xc3\x0e\x4a\x38\xcd\x3b\xea\xff\x2f\x84\x4d\x22\x42\x1d\x8f\xa9\x80\x9f\x1d\x46\x08\xe8\x9d\x5d\x9f\xea\xb4\x23\x12\x8c\x20\xcd\xbd\x7b\xcc\x07\x8a\x64\xb0\x35\x76\x23\x6e\xcf\x19\x3a\x63\x8c\xd4\xb3\x7b\x25\xe4\xe1\xe2\xb4\xa7\x92\x0e\xbd\xec\x87\x01\xe2\x08\x5a\x66\x93\x1e\x57\x1c\xf8\x09\x12\x6c\xf4\xb1\x70\x28\xe4\x0b\xe2\xd6\x7a\x8f\x21\xba\x5e\x7a\x22\x44\xff\xeb\xe3\x0f\x57\xf0\x71\x44\x79\x0f\xbc\xc2\x56\xbc\x10\x84\xc9\x34\xef\xd8\xe0\x24\x4d\x37\xe5\xc7\x7c\x13\xee\x66\xfa\x82\xb9\x43\xea\x34\x23\x5d\x07\xe1\x73\xee\x87\xdf\x4f\xc9\x68\x34\x5d\xf3\x25\x8f\x6d\x3b\xe3\xe4\x98\x45\x47\xc9\x07\xb0\x16\xbd\x2a\xee\x2f\x60\x34\x26\x1b\x96\xf9\x54\x73\x14\x34\x97\xd0\x63\xfb\x11\xb2\x80\x98\xc2\x40\x80\xb0\x84\x06\xd7\xd9\x02\xa2\x38\xc2\x5a\xf8\x50\xf1\x31\x8a\x61\xcb\x8c\x8c\x71\x0c\x15\x7e\xa4\x64\xd0\x2d\x83\x19\x84\x7a\xae\xfe\x6d\xb3\x46\xd3\x28\x1d\xc6\x73\x78\xdb\x27\x1f\x52\x27\x24\xa5\xa7\xd7\xe9\x6b\x17\x3c\xbd\x14\x8a\x16\x8a\xaf\xfa\x60\x77\x82\xe3\xd7\x33\x0b\x6f\xfa\x82\x0d\x0a\x5d\x93\xe5\xcf\x58\x95\xff\xf7\xea\x38\xae\xd2\xe7\xad\x90\xc9\xb1\x38\x2f\x5c\x23\x67\x3c\x76\xeb\xe4\x74\x4b\x22\x95\x10\x23\x9b\xa6\xb2\x9d\x0c\x69\x1f\x12\x92\x08\x04\xe0\x43\x0e\xa7\x7c\x8b\x27\x57\x57\xa1\x87\xe3\x67\xb5\xff\x3d\x8b\x7e\x9f\xa2\xde\xd7\xd1\x6e\x7f\x16\xff\x23\x21\x3a\x76\xee\x3e\x62\xc6\xd5\x96\xc8\x6f\xdf\x8e\x47\xee\x0f\x40\x47\x51\x97\xf0\x90\xf8\x1a\x5c\x0b\x2b\xd2\x56\xbb\xe7\x32\x30\x85\xa5\xc2\xdb\x6f\xce\x11\xe1\x87\x15\xb5\x45\xeb\xb3\xfd\xf2\x5a\xb4\x21\x38\x85\x01\x97\xb9\xef\xc0\x80\xf7\x07\x00\x06\x43\x7f\xd6\xcb\x33\xb9\xb9\xd7\xc4\xee\xeb\xc3\xb7\x30\x8d\xf0\x46\xad\x9a\x8a\x67\xfc\xc1\xff\x27\x0a\xa8\x2c\x9f\xfc\x1b\x00\x00\xff\xff\x48\xca\xf1\x8b\xab\x0e\x00\x00")
+var _assetsLessGoFileManagerJs = []byte(
+`var path = require('./path'),
+    fs = require('./fs'),
+    PromiseConstructor,
+    AbstractFileManager = require("../less/environment/abstract-file-manager.js");
 
-func assetsLessGoFileManagerJsBytes() ([]byte, error) {
-	return bindataRead(
-		_assetsLessGoFileManagerJs,
-		"assets/less-go/file-manager.js",
-	)
+try {
+    PromiseConstructor = typeof Promise === 'undefined' ? require('promise') : Promise;
+} catch(e) {
 }
+
+var FileManager = function() {
+};
+
+FileManager.prototype = new AbstractFileManager();
+
+FileManager.prototype.supports = function(filename, currentDirectory, options, environment) {
+    //print('supports');
+    return true;
+};
+FileManager.prototype.supportsSync = function(filename, currentDirectory, options, environment) {
+    //print('supportsSync');
+    return true;
+};
+
+FileManager.prototype.loadFile = function(filename, currentDirectory, options, environment, callback) {
+    //print("loadFile");
+    var fullFilename,
+        data,
+        isAbsoluteFilename = this.isPathAbsolute(filename),
+        filenamesTried = [];
+
+    options = options || {};
+
+    if (options.syncImport || !PromiseConstructor) {
+        //print("Loading sync");
+        data = this.loadFileSync(filename, currentDirectory, options, environment, 'utf-8');
+        callback(data.error, data);
+        return;
+    }
+
+    var paths = isAbsoluteFilename ? [""] : [currentDirectory];
+    if (options.paths) { paths.push.apply(paths, options.paths); }
+    if (!isAbsoluteFilename && paths.indexOf('.') === -1) { paths.push('.'); }
+
+    // promise is guarenteed to be asyncronous
+    // which helps as it allows the file handle
+    // to be closed before it continues with the next file
+    return new PromiseConstructor(function(fulfill, reject) {
+        (function tryPathIndex(i) {
+            if (i < paths.length) {
+                fullFilename = filename;
+                if (paths[i]) {
+                    fullFilename = path.join(paths[i], fullFilename);
+                }
+                fs.stat(fullFilename, function (err) {
+                    if (err) {
+                        filenamesTried.push(fullFilename);
+                        tryPathIndex(i + 1);
+                    } else {
+                        fs.readFile(fullFilename, 'utf-8', function(e, data) {
+                            if (e) { reject(e); return; }
+
+                            fulfill({ contents: data, filename: fullFilename});
+                        });
+                    }
+                });
+            } else {
+                reject({ type: 'File', message: "'" + filename + "' wasn't found. Tried - " + filenamesTried.join(",") });
+            }
+        }(0));
+    });
+};
+
+FileManager.prototype.loadFileSync = function(filename, currentDirectory, options, environment, encoding) {
+    var fullFilename, paths, filenamesTried = [], isAbsoluteFilename = this.isPathAbsolute(filename) , data;
+    options = options || {};
+
+    paths = isAbsoluteFilename ? [""] : [currentDirectory];
+    if (options.paths) {
+        paths.push.apply(paths, options.paths);
+    }
+    if (!isAbsoluteFilename && paths.indexOf('.') === -1) {
+        paths.push('.');
+    }
+
+    var err, result;
+    for (var i = 0; i < paths.length; i++) {
+        try {
+            fullFilename = filename;
+            if (paths[i]) {
+                fullFilename = path.join(paths[i], fullFilename);
+            }
+            filenamesTried.push(fullFilename);
+            fs.statSync(fullFilename);
+            break;
+        } catch (e) {
+            fullFilename = null;
+        }
+    }
+
+    if (!fullFilename) {
+        err = { type: 'File', message: "'" + filename + "' wasn't found. Tried - " + filenamesTried.join(",") };
+        result = { error: err };
+    } else {
+        data = fs.readFileSync(fullFilename, encoding);
+        result = { contents: data, filename: fullFilename};
+    }
+
+    return result;
+};
+
+module.exports = FileManager;`)
 
 func assetsLessGoFileManagerJs() (*asset, error) {
-	bytes, err := assetsLessGoFileManagerJsBytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindataFileInfo{name: "assets/less-go/file-manager.js", size: 3755, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+	b := _assetsLessGoFileManagerJs
+	info := bindataFileInfo{name: "assets/less-go/file-manager.js", size: int64(len(b)), mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
-var _assetsLessGoFsJs = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x6c\x8e\x41\x8e\xc2\x30\x0c\x45\xd7\xc9\x29\x3c\xab\x64\xa4\xd1\x5c\x00\x75\x09\x17\xe0\x04\x51\xeb\xd0\x48\xc8\x8e\x1c\x97\x52\xa1\xde\x9d\xa4\x55\x57\xb0\xfe\x7e\xcf\x0f\x9f\x99\x45\xcb\x7f\xd1\xa0\xd7\x85\x7a\xe8\x20\x4e\xd4\x6b\x62\x02\x9f\x83\x8e\xbf\xf0\xb2\xe6\x11\x04\x04\x4b\x1d\x05\xc3\x70\x49\x77\xdc\xb7\x93\x35\x29\x82\xd7\x25\x23\xc7\xed\xe2\xa7\xeb\xc0\x15\x95\x44\x37\xb7\xa1\x46\x47\xe1\x19\x08\x67\x38\x8b\xb0\x78\xd7\x70\x20\x56\x88\x3c\xd1\xe0\x9a\x64\xb5\xab\xb5\x47\xca\xf1\xe2\x6b\xce\x1f\x20\xf5\x3c\x54\x7d\xb5\x1b\x6b\x72\xfd\xa4\xde\x35\x06\x62\x13\x97\x4a\x6d\xce\x7d\x39\x32\x05\x75\x12\xfa\xc8\x5f\xdf\x01\x00\x00\xff\xff\xfa\xc8\xfe\xfc\x00\x01\x00\x00")
-
-func assetsLessGoFsJsBytes() ([]byte, error) {
-	return bindataRead(
-		_assetsLessGoFsJs,
-		"assets/less-go/fs.js",
-	)
+var _assetsLessGoFsJs = []byte(
+`exports.statSync = function (path) {
+	var res = readFile(path);
+	if (typeof res !== 'string') {
+		throw new Error('File not found');
+	}
 }
+
+exports.readFileSync = function (path, encoding) {
+	//print('read file sync');
+	//print(path);
+	return readFile(path);
+}`)
 
 func assetsLessGoFsJs() (*asset, error) {
-	bytes, err := assetsLessGoFsJsBytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindataFileInfo{name: "assets/less-go/fs.js", size: 256, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+	b := _assetsLessGoFsJs
+	info := bindataFileInfo{name: "assets/less-go/fs.js", size: int64(len(b)), mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
-var _assetsLessGoIndexJs = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x74\x8e\xc1\x6a\xc3\x30\x0c\x86\xef\x7e\x0a\xd1\x93\x0d\x99\xfb\x00\x66\xc7\xf6\xb6\x27\x18\x3b\x98\x4c\x19\x86\x58\xce\x14\xa5\x2d\xb4\x7d\xf7\xc9\x5e\x03\x29\x6c\x3e\x49\xfe\x7f\xfd\xdf\x7f\x8a\x0c\x48\xa7\xc4\x85\x32\x92\xc0\x2b\x30\x7e\x2f\x89\xd1\xee\xfc\x7e\x23\xec\x5c\x67\x40\xdf\x31\x8d\xf8\x16\x29\x7e\x21\x3f\x7b\x07\x15\x5e\xf2\xaf\xb2\x9a\x7b\xc6\x28\x78\xe4\x92\x0f\xff\x20\xfc\x7e\xc4\x79\x5e\xfd\x75\x56\xf9\xcf\x33\xbb\x29\xd3\xc1\x3b\xe1\x79\xdb\xc5\xba\x0f\x17\x6a\x84\x31\x35\xc4\x9f\x39\x09\x1e\x98\x4b\x6d\x39\x2c\xd4\x4b\x2a\x04\xb6\x97\x4b\x07\x65\xaa\xcb\xec\xe0\xda\xa0\x8f\x55\x7d\xeb\x74\xbb\xc1\xf5\x1e\x9a\x98\x06\xb0\x8f\x6f\x3f\x2b\x8e\x44\xcf\xb4\xbf\x2c\x4c\x01\xee\xcd\x33\x71\xd2\x7a\x0d\x3b\x14\xce\x51\x1a\xf7\x99\xe5\x82\xd1\x44\x93\xcb\xe7\x32\xa2\xc7\xcb\x54\x58\x2a\xb2\x5e\x05\xf3\x13\x00\x00\xff\xff\x50\x6b\xf8\xe1\x85\x01\x00\x00")
+var _assetsLessGoIndexJs = []byte(
+`var environment = require("./environment"),
+    FileManager = require("./file-manager"),
+    createFromEnvironment = require("../less"),
+    less = createFromEnvironment(environment, [new FileManager()]);
 
-func assetsLessGoIndexJsBytes() ([]byte, error) {
-	return bindataRead(
-		_assetsLessGoIndexJs,
-		"assets/less-go/index.js",
-	)
-}
+less.writeError = function (ctx, options) {
+    options = options || {};
+    if (options.silent) { return; }
+    print(less.formatError(ctx, options));
+};
+
+module.exports = less;`)
 
 func assetsLessGoIndexJs() (*asset, error) {
-	bytes, err := assetsLessGoIndexJsBytes()
-	if err != nil {
-		return nil, err
-	}
-
-	info := bindataFileInfo{name: "assets/less-go/index.js", size: 389, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+	b := _assetsLessGoIndexJs
+	info := bindataFileInfo{name: "assets/less-go/index.js", size: int64(len(b)), mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -1927,33 +2109,94 @@ func assetsLessGoMimetypesJsBytes() ([]byte, error) {
 }
 
 func assetsLessGoMimetypesJs() (*asset, error) {
-	bytes, err := assetsLessGoMimetypesJsBytes()
+	b, err := assetsLessGoMimetypesJsBytes()
 	if err != nil {
 		return nil, err
 	}
 
 	info := bindataFileInfo{name: "assets/less-go/mimeTypes.js", size: 31497, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
-var _assetsLessGoPathJs = []byte("\x1f\x8b\x08\x00\x00\x09\x6e\x88\x00\xff\x7c\x54\xb1\x72\xdb\x30\x0c\xdd\xf5\x15\xf0\x12\x49\xe7\x44\x49\xd7\xb8\xbe\x5e\x86\xae\xbd\x5e\xda\xcd\xcd\xc0\x58\xb0\xc5\x9e\x4c\xf2\x48\xca\xae\xdb\xf8\xdf\x0b\x90\x94\x2c\xd9\x4d\x33\x28\x32\xf8\x00\x3e\x3c\x3c\x68\xd3\xa9\xb5\x97\x5a\x81\x70\x0e\xad\xff\x2a\x7c\x53\x18\x7a\x94\xf0\x27\x03\x90\x1b\x28\xfc\xd1\xa0\xde\x00\x07\x61\xb6\x5c\x42\xee\xbc\x95\x6a\x9b\x47\x04\x80\x6f\xac\x3e\x80\xc2\x03\x7c\x27\xe4\x67\x6b\xb5\x2d\x72\xae\x03\xbb\xce\x79\x78\x45\x10\x10\x53\x2a\x78\xc6\x35\xca\x3d\xd6\x90\xc3\x3c\x54\x2c\x17\x54\xe3\x94\x9d\xb2\x6c\x20\x22\xdd\xd3\xab\xd3\x6d\xe7\x71\x44\xe4\x92\x1d\xa7\x59\xf4\x9d\x55\x30\x9b\x05\x6a\x37\x37\xa1\xe0\xea\xe1\x05\x96\xcc\xf2\x3e\x5f\x64\xa7\x45\x96\xdd\xdf\x13\x90\xea\xed\xd1\x41\x05\x42\xd5\x50\x55\x80\x2d\xee\x50\x79\x07\x92\x1a\x8f\xad\x09\x6b\xc5\x11\x0e\x92\x5e\x6b\x69\x71\xed\xb5\x3d\x82\x12\x3b\x4a\xf3\x0d\x5a\xe4\x42\x7d\x43\x4a\x83\x6b\x85\x6b\xe8\x4c\x5b\xa8\x71\x2f\xd7\x98\xb0\xc5\xfa\xf1\x47\xc9\x65\x29\x29\xd6\xe4\xc4\xc2\x69\x10\x2d\x3d\x28\xb3\x45\x51\x93\x18\x81\x8a\xb7\x42\xb6\xfc\xa3\x2f\x77\x07\xd2\x43\xad\xe9\x4d\x69\x7a\x91\xce\xd3\x69\x27\x5d\x13\xfb\x68\x85\x27\xf9\x42\xaa\x48\x22\x05\xf6\xae\x3c\xeb\xa7\xb4\xdd\x89\x56\xfe\xc6\x27\xbe\x9d\xe4\xb2\xde\xdd\xd2\xed\xad\x3e\x3c\xbd\xea\x3d\x3e\x6b\xed\xa3\xa8\x7b\x61\x59\x1b\x58\xc2\xea\x85\x05\xdd\x50\x33\x05\x07\x25\x85\x1e\x16\xf4\xef\x23\x84\xf4\xaa\x45\xb5\xf5\x0d\x45\xe6\xf3\x7e\xec\x8c\x33\x84\x0b\x80\x95\xa4\x02\x21\x4c\x34\xe5\x96\x28\x20\xe0\xce\xf8\x63\x3c\x0e\x27\xec\xa5\x99\x81\xb7\x37\x4e\xe3\x09\x55\x79\x19\x0e\x00\xd6\x5a\x51\x9f\x1d\xa6\x1a\x8c\xec\x31\xd5\xe0\xb3\x18\x27\xbe\x89\x0d\x4f\x9c\x7e\xad\x46\x91\x3b\xf8\xf0\x12\x3d\x3a\xc9\x63\xab\xb8\xca\x68\x53\x04\xdf\xf0\xdf\x89\x2c\xe0\x30\x54\xfc\x97\x32\xa3\xac\xce\x35\x45\x28\x37\xa4\x66\xa3\x02\x3d\x78\x80\x9a\x84\x3b\x05\x5f\x9f\x5d\x4a\x80\xc5\xc4\xe6\xc3\x98\xfe\xe7\x72\x80\x2c\xcd\xe9\xbc\x15\x61\xb5\x96\x57\x6b\x72\x9b\x98\xf4\x96\xfa\xc6\x8e\x0a\xf3\x19\x2d\x07\x3f\x26\x62\x0d\xab\x42\x37\x85\xe1\x7d\xe9\x69\x05\x03\x33\x9e\xe2\x26\x5e\x79\xe5\x2c\x2a\xe6\x4c\x2b\x7d\x41\x25\xca\x5b\x98\x4d\x49\x96\xd5\x4f\x2d\x55\x38\x0b\x83\x8d\x06\x48\x74\x2e\xb1\x49\xc9\x74\x13\x79\x23\x7e\x18\x92\x19\x52\xd2\xa4\xb7\x49\xca\x7c\x68\x63\x2c\x7a\x71\xa1\xda\x27\x06\xc1\x23\xe4\x64\x8e\xf8\xfd\x89\xdf\x08\xfc\x65\x34\xdb\x9c\xf9\xd2\xed\xc3\x8c\x8a\xf3\x9e\xf4\xc4\xf2\xf7\x16\x45\xd8\x6d\x17\xbe\x29\xef\x2d\x8b\xc3\x2d\x9f\x53\xc6\x00\x0d\x6b\xc3\xe7\xa3\xc1\x27\x58\xb2\x11\x77\xdf\x47\x26\x7b\x30\x33\x23\xd5\xc6\x32\x24\xf4\x85\xd1\xaf\x71\xac\xc4\xfc\x0a\x3d\xf2\xee\xa0\xe2\x85\x53\x49\xb2\xbf\x01\x00\x00\xff\xff\xcd\x5c\x1a\x4c\x35\x06\x00\x00")
-
-func assetsLessGoPathJsBytes() ([]byte, error) {
-	return bindataRead(
-		_assetsLessGoPathJs,
-		"assets/less-go/path.js",
-	)
+var _assetsLessGoPathJs = []byte(
+`function assertPath(path) {
+  if (typeof path !== 'string') {
+    throw new TypeError('Path must be a string. Received ' + path);
+  }
 }
 
-func assetsLessGoPathJs() (*asset, error) {
-	bytes, err := assetsLessGoPathJsBytes()
-	if err != nil {
-		return nil, err
-	}
+function isAbsolute(path) {
+  assertPath(path);
+  return !!path && path[0] === '/';
+};
 
-	info := bindataFileInfo{name: "assets/less-go/path.js", size: 1589, mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
-	a := &asset{bytes: bytes, info: info}
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  var res = [];
+  for (var i = 0; i < parts.length; i++) {
+    var p = parts[i];
+
+    // ignore empty parts
+    if (!p || p === '.')
+      continue;
+
+    if (p === '..') {
+      if (res.length && res[res.length - 1] !== '..') {
+        res.pop();
+      } else if (allowAboveRoot) {
+        res.push('..');
+      }
+    } else {
+      res.push(p);
+    }
+  }
+
+  return res;
+}
+
+function normalize(path) {
+  assertPath(path);
+
+  var isAbsolutePath = isAbsolute(path),
+      trailingSlash = path && path[path.length - 1] === '/';
+
+  // Normalize the path
+  path = normalizeArray(path.split('/'), !isAbsolutePath).join('/');
+
+  if (!path && !isAbsolutePath) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolutePath ? '/' : '') + path;
+};
+
+exports.join = function () {
+  var path = '';
+  for (var i = 0; i < arguments.length; i++) {
+    var segment = arguments[i];
+    assertPath(segment);
+    if (segment) {
+      if (!path) {
+        path += segment;
+      } else {
+        path += '/' + segment;
+      }
+    }
+  }
+  return normalize(path);
+}`)
+
+func assetsLessGoPathJs() (*asset, error) {
+	b := _assetsLessGoPathJs
+	info := bindataFileInfo{name: "assets/less-go/path.js", size: int64(len(b)), mode: os.FileMode(420), modTime: time.Unix(1449562166, 0)}
+	a := &asset{bytes: b, info: info}
 	return a, nil
 }
 
@@ -2298,5 +2541,15 @@ func RestoreAssets(dir, name string) error {
 func _filePath(dir, name string) string {
 	cannonicalName := strings.Replace(name, "\\", "/", -1)
 	return filepath.Join(append([]string{dir}, strings.Split(cannonicalName, "/")...)...)
+}
+
+//string to \xNN
+func convString(s string)string{
+	var hs string
+	for _, v := range s {
+		hexCode := fmt.Sprintf("%2x", v)
+		hs += "\\x" + hexCode
+	}
+	return hs
 }
 

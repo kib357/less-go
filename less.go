@@ -103,7 +103,7 @@ func (l *LessCompiler) Compile(input string, wb *bytes.Buffer, mods ...map[strin
 			var data = fs.readFileSync("` + input + `");
 			less.render(data, ` + string(encodedOptions) + `, function (e, output) {
 				if (e == null) {
-					print("Rendered");
+					//print("Rendered");
 					writeFile(null, output.css);
 				} else {
 					print('Render error', e.stack);
