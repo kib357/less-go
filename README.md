@@ -1,4 +1,4 @@
-# less-go
+# less-go [THIS PROJECT IS NO LONGER MAINTAINED, feel free to fork and use as boilerplate for further usages]
 
 [![Build Status](https://secure.travis-ci.org/kib357/less-go.png?branch=master)](http://travis-ci.org/kib357/less-go)
 
